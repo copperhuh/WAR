@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>WAR</title>
+        <link rel="icon" href="skull-idle-x/1.PNG">
+        <link rel="stylesheet" href='style.css'>
+        <script src="https://kit.fontawesome.com/1adbd14ed1.js" crossorigin="anonymous"></script>
+    </head>
+    <body scrolling="no">
+        <div id='start'>
+            <div id='start-header'>
+
+                <div id='start-skull'></div>
+                <h1 id='start-title'>WAR</h1>
+
+            </div>
+            <div id='start-body'>
+
+                <button id='start-play'>PLAY</button>
+
+                <div id='start-config'>
+
+                    <form id='start-form'>
+
+                        <div class='form-section'>
+
+                            <div class="form-subsection">
+                                <label for="player1NameInput" >FIRST PLAYER</label><br>
+                                <input required type="text" maxlength='12' value='PLAYER1' id="player1NameInput" name="first-player">
+                            </div>
+                            
+                            <div class="form-subsection">
+                                <label for="player2NameInput">SECOND PLAYER</label><br>
+                                <input required type="text" maxlength='12' value='PLAYER2' id="player2NameInput" name="second-player">
+                            </div>
+                            
+                        </div>
+
+                        <div class='form-section'>
+                            <label for="quantity">NUMBER OF DECKS </label>
+                            <input required type="number" value='1' id="quantity" name="quantity" min="1" max="100">
+                        </div>
+
+                        <div class='form-section'>
+
+                            <div class='form-section-alt'>
+
+                                <label for="mode" >----- GAME MODE -----</label>
+                                <div class='form-section no-padding'>
+                                    <div class='form-subsection-alt'>
+                                        <label for="manual">MANUAL</label>
+                                        <input type='radio' checked='checked' id="manual"name='mode' value='manual'>
+                                    </div>
+
+                                    <div class='form-subsection-alt'>
+                                        <label for="auto">INSTANT</label>
+                                        <input type='radio' id='auto' name='mode' value='auto'>
+                                    </div>
+                                </div>
+                               </div>
+                                   
+                            </div>
+
+                            <input type='submit' id='start-submit' value='START'>
+                        </div>
+
+                    </form>
+                    
+                </div>
+
+                <button id='start-button-rules'>?</button>
+            </div>
+            <div id='start-rulebook'>
+                    <div id='start-rulebook-body'>
+                        <h2>RULES OF WAR</h2>
+                        <p>     All of the cards from the starting card pool are shuffled, and split evenly into two halves.</p>
+                        <p>Each player turns up a card at the same time and the player with the higher card takes both cards and puts them, face down, on the bottom of his stack.</p>
+                        <p>If the cards are the same rank, it is War. Each player turns up one card face down and one card face up. The player with the higher cards takes both piles (six cards). If the turned-up cards are again the same rank, each player places another card face down and turns another card face up. The player with the higher card takes all 10 cards, and so on.</p>
+                        <p>In manual mode advance the game by clicking anywhere, after the dealing animation is finished.</p>
+                    </div>
+            </div>
+            
+        </div>
+
+        <div id='game'>
+            <div id=advanceBtn>
+                <div id='game-top-part'>
+
+                    <div class='playerName' id="firstPlayerName">PLAYER1</div>
+
+                    <div id='advantageBar'>
+                        <div id='firstPlayerAdvantageMeter'></div>
+                        <div id='secondPlayerAdvantageMeter'></div>
+                        <div class='cardsNum' id='firstPlayerCardsNum'>XX</div>
+                        <div class='cardsNum' id='secondPlayerCardsNum'>XX</div>
+                    </div>
+
+                    <div class='playerName' id="secondPlayerName">PLAYER2</div> 
+            
+                </div>
+
+                <div id='game-main-part'>
+                    <div class='skull-space'>
+                        <div class='player-skull' id='player1-skull'></div>
+                    </div>
+                    
+                    
+                    <div class='player-assets'>
+                        <div class='card-stack-placeholder' id='player1-card-stack-placeholder'></div>
+                        <div class='card-stack-placeholder' id='player2-card-stack-placeholder'></div>
+                    </div>
+                    
+                    <div class='skull-space'>
+                        <div class='player-skull' id='player2-skull'></div>
+                    </div>
+                    
+                    
+                    
+                
+                </div>
+
+                <div id='game-bottom-part'>
+                    <div id='game-info'>Mode: Manual | Decks: X</div>
+                    <div class="hide-won-cards" id='hide-won-cards1'></div>
+                    <div class='cards-won-hidden' id='cards-won'></div>
+                    <div class="hide-won-cards" id='hide-won-cards2'></div>
+                    
+                </div>
+            </div>  
+        
+            <div id='speed-buttons-container'>
+                <button class='speed-button active-speed-btn'>x1</button>
+                <button class='speed-button'>x2</button>
+                <button class='speed-button'>x5</button>
+                <button class='speed-button'>x10</button>
+                <button class='speed-button'>x15</button>
+                <button class='speed-button'>x20</button>
+            </div>
+
+            <div id='game-control-btns'>
+                <button id='auto-btn'>AUTO</button>
+                <button id='game-leave-btn'>LEAVE GAME</button>
+            </div>
+            
+        </div>
+        
+        <div id='end-screen'>
+            <div class='nodding-head' id='nodding-head1'></div>
+            <div id='end-game-info'>
+                <h1 id=winner>XX<br/> WON!</h1>
+                <h3 id=total-cards-turned>Cards turned: </h3>
+                <h3 id='wars-waged'>Wars waged: </h3>
+                <h3 id='time-spend'>The amount of time it would've taken to play this game in real life: <span id=time-elapsed>XX</span></h3>
+                <button id='reset-btn'>PLAY AGAIN</button>
+            </div>
+            <div class='nodding-head' id='nodding-head2'></div>
+        </div>
+
+        <img src='other/card-back-circle-crop.png' class='card-circle card-circle-left' >
+        <img src='other/card-back-circle-crop.png' class='card-circle card-circle-right' >        
+        
+        <script src='script.js'></script>
+    </body>
+</html>
