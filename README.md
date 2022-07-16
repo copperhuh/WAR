@@ -1,4 +1,4 @@
-# PORTFOLIO
+# WAR
 ![Screenshot 1](https://github.com/copperhuh/Portfolio/blob/master/src/screenshots/ss-war.png?raw=true)
 
 A browser game/simulation, of the war card game built only with vanilla JS, HTML and CSS.
