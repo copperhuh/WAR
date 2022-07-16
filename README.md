@@ -9,14 +9,6 @@ All assets exluding the skull model were hand-drawn by me for this project.
 
 [Github Pages](https://copperhuh.github.io/WAR/)
 
-## Table of Contents
-
--   [Technologies](#Technologies)
--   [How It Works](#How-It-Works)
--   [Appendix](#Appendix)
--   [Author](#Author)
--   [Feedback](#Feedback)
-
 ## Technologies
 
 -   **JavaScript**
